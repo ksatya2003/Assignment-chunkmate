@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 250px;
+  background: #1e293b;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2,
+.sidebar h3 {
+  text-align: center;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.document-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 250px);
+  margin-bottom: 1rem;
+}
+
+.document-list button {
+  width: 96%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #0077b6;
+  background: transparent;
+  color: #0077b6;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.document-list button:hover,
+.document-list button.active {
+  background-color: #0077b6;
+  color: white;
+}
+
+.upload-button {
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-button:hover {
+  background-color: #1d4ed8;
+}
+
+.success,
+.error {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #e6f7ff;
+}
+
+.chunk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.chunk-card {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+  white-space: pre-wrap;
+  
+}
+
+
+.chunk-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chunk-number {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-weight: bold;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+.chunk-actions button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chunk-actions button:hover {
+  background-color: #0056b3;
+}
+
+.chunk-actions button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.chunk-actions button + button {
+  margin-left: 10px;
+}
